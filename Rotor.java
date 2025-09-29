@@ -13,7 +13,7 @@ public class Rotor {
     }
     //last char followed by the rest of the stringt w/o last char
     public boolean rotate(){
-        rotorValues = rotorValues.charAt(27) + rotorValues.substring(0, 26) ;
+        rotorValues = rotorValues.charAt(rotorValues.length() - 1) + rotorValues.substring(0, rotorValues.length() - 1);
         if(rotorValues.charAt(0) == startChar){
             return true;
         }

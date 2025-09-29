@@ -1,0 +1,23 @@
+commit 400d2a16f40f53bbfe37648a1b7672473a68437d
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Sep 29 00:45:58 2025 -0400
+
+    coorected rotate function as it was previously rotating in counter-clockwise
+
+commit f7295ed6b3ad6f9f5751fdfda2a71070efdad984
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Sep 29 00:30:09 2025 -0400
+
+    enigma encrypt code complete
+
+commit 40f89bcbdacf765eb308cb9978c55a816e012f80
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Sun Sep 28 23:36:42 2025 -0400
+
+    rotor.java file complete
+
+commit 6924ed7d4055888076b5eb861b12356c992a8d20
+Author: ahnhenry <ahn.laurie2025@gmail.com>
+Date:   Mon Sep 22 14:59:53 2025 -0400
+
+    Add files via upload

@@ -25,14 +25,19 @@ public class Enigma{
         char[] messageChar = message.toCharArray();
 
         for(int i = 0; i < length; i++){
-            int outer1Int = rotors[2].indexOf(messageChar[i]);
-            char charMiddle = rotors[1].charAt(outer1Int);
-            int outer2Int = rotors[2].indexOf(charMiddle);
-            char finalChar = rotors[0].charAt(outer2Int);
+            if(messageChar[i] == '#'){
+                messageChar[i] = ' ';
+            }
+            int charInt = rotors[2].indexOf(messageChar[i]);
+            char charMiddle = rotors[1].charAt(charInt);
+            int outer = rotors[2].indexOf(charMiddle);
+            char finalChar = rotors[0].charAt(outer);
 
             results = results + finalChar;
-            rotors[0].rotate();
+            rotate();
         }
+        System.out.println(messageChar);
+       System.out.println(results);
         return results;
     }
 
@@ -42,21 +47,23 @@ public class Enigma{
        String results = new String();
        int length = message.length();
        char[] messageChar = message.toCharArray();
-
+       
        for(int i = 0; i < length; i++){
-        // if(messageChar[i] == ' '){
-        //     messageChar[i] = '#';
-        // }
+        if(messageChar[i] == ' '){
+            messageChar[i] = '#';
+        }
+        
         int charInt = rotors[0].indexOf(messageChar[i]);
         char outer = rotors[2].charAt(charInt);
+
         int middle = rotors[1].indexOf(outer);
         char finalChar = rotors[2].charAt(middle);
 
         results = results + finalChar;
-        rotors[0].rotate();
+        rotate();
         
        }
-
+       
        return results;
 
     }
