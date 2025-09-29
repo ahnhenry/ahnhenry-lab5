@@ -25,19 +25,27 @@ public class Enigma{
         char[] messageChar = message.toCharArray();
 
         for(int i = 0; i < length; i++){
-            if(messageChar[i] == '#'){
-                messageChar[i] = ' ';
-            }
+            // if(messageChar[i] == '#'){
+            //     messageChar[i] = ' ';
+            // }
             int charInt = rotors[2].indexOf(messageChar[i]);
             char charMiddle = rotors[1].charAt(charInt);
             int outer = rotors[2].indexOf(charMiddle);
             char finalChar = rotors[0].charAt(outer);
+            if(i == 13){
+
+                // System.out.println("step 1:" + charInt);
+                // System.out.println("step 2:" + charMiddle);
+                // System.out.println("step 3:" + outer);
+                // System.out.println("step 4:" + finalChar);
+            
+
+            }
 
             results = results + finalChar;
             rotate();
-        }
-        System.out.println(messageChar);
-       System.out.println(results);
+            System.out.println(results);
+        }    
         return results;
     }
 
