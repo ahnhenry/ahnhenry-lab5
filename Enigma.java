@@ -26,7 +26,26 @@ public class Enigma{
 
     
     public String encrypt(String message){
-        //TODO
+       String results = new String();
+       int length = message.length();
+       char[] messageChar = message.toCharArray();
+
+       for(int i = 0; i < length; i++){
+        // if(messageChar[i] == ' '){
+        //     messageChar[i] = '#';
+        // }
+        int charInt = rotors[0].indexOf(messageChar[i]);
+        char outer = rotors[2].charAt(charInt);
+        int middle = rotors[1].indexOf(outer);
+        char finalChar = rotors[2].charAt(middle);
+
+        results = results + finalChar;
+        rotors[0].rotate();
+        
+       }
+
+       return results;
+
     }
 
     
