@@ -20,7 +20,20 @@ public class Enigma{
 
 
     public String decrypt(String message){        
-        
+        String results = new String();
+        int length = message.length();
+        char[] messageChar = message.toCharArray();
+
+        for(int i = 0; i < length; i++){
+            int outer1Int = rotors[2].indexOf(messageChar[i]);
+            char charMiddle = rotors[1].charAt(outer1Int);
+            int outer2Int = rotors[2].indexOf(charMiddle);
+            char finalChar = rotors[0].charAt(outer2Int);
+
+            results = results + finalChar;
+            rotors[0].rotate();
+        }
+        return results;
     }
 
 

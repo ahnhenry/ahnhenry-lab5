@@ -11,10 +11,9 @@ public class Rotor {
         while(!this.rotate());
             
     }
-    
+    //last char followed by the rest of the stringt w/o last char
     public boolean rotate(){
-        rotorValues = rotorValues.substring(1) + rotorValues.charAt(0);
-               
+        rotorValues = rotorValues.charAt(27) + rotorValues.substring(0, 26) ;
         if(rotorValues.charAt(0) == startChar){
             return true;
         }
